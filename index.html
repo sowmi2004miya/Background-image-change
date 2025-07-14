@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat; 
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            flex-direction: column;
+            transition: background 0.5s ease-in-out; 
+        }
+
+        img {
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+    <img src="https://wallpapers.com/images/featured/flying-eagle-background-rhdnz43g1v71xgq7.jpg" alt="Image 1" id="a" height="100px" width="100px">
+    <img src="https://wallpapercat.com/w/full/f/3/e/1031323-3840x2160-desktop-4k-woodpecker-background-image.jpg" alt="Image 2" id="b" height="100px" width="100px">
+    <img src="https://scontent.fblr2-3.fna.fbcdn.net/v/t39.30808-6/491917503_9851501331574032_53593860417354030_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=vGQyyGaHFd8Q7kNvwGw-kRs&_nc_oc=Admn2IqXt50Oe1ZxsQsk0-SFn5cdbQ0FUrIMj8o48m2_saa0SgaGXZTWoNAPixqphgsTbyhSMG1Qo_g1J2dn7IDh&_nc_zt=23&_nc_ht=scontent.fblr2-3.fna&_nc_gid=nkU9u3WHW2ske9baP45VLw&oh=00_AfShwckqohxtuHR5blr29LLRHpnZE_vQh8mfzbKoMlatzw&oe=686EA2B7" alt="Image 3" id="c" height="100px" width="100px">
+
+    <script>
+        let images = document.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].addEventListener("click", function() {
+                document.querySelector("body").style.cssText = `
+                    background-image: url(${images[i].src});
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
